@@ -1,0 +1,38 @@
+<head>
+  <title>名前</title>
+  <meta charset = "UTF-8">
+  <style type="text/css">
+<!--
+.screen_name{
+  color:#4F4F4F;
+  font-size:10px;
+}
+.time{
+  color:#4F4F4F;
+  font-size:5px;
+}
+-->
+</style>
+</head>
+
+<body>
+
+  <% @names.each_with_index do |obj,l| %>
+
+    <% name, screen_name, time, id = obj.split(",")[0], obj.split(",")[1], obj.split(",")[2], obj.split(",")[3] %>
+
+    <div class = "name">
+      <font size = "<%= (@favorite_counts[l].to_i)+5 %>" >
+        <%= name %>
+      </font>
+    </div>
+    <div class = "screen_name">
+      <%= screen_name %>
+    </div>
+    <div class = "time">
+      <%= time %>
+    </div>
+    
+  <% end %>
+
+</body>
